@@ -1,0 +1,47 @@
+@startuml
+abstract class Cafe.CaffeinBevarage{
+prepreRecipe()
+boilWater()
+pourlnCup()
+brew()
+addCondiments()
+}
+
+abstract class Cafe.CaffeinBevarageWithHook{
+prepareRecipe()
+brew()
+addCondiments()
+pourIncup()
+customerWantsCondiments()
+
+}
+
+class Cafe.coffee{
+prepareRecripe()
+boilWater()
+pourincup()
+brew()
+addCondiments()
+}
+
+class Cafe.CoffeeWithHook{
+brew()
+addCondiments()
+customerWantsCondiments():boolean
+getUserInput()
+}
+
+class Cafe.Tea{
+prepareRecripe()
+boilWater()
+pourincup()
+addCondiments()
+brew()
+}
+class Cafe.BevarageTest{
+}
+
+Cafe.CaffeinBevarage <|-- Cafe.coffee
+Cafe.CaffeinBevarageWithHook <|-- Cafe.CoffeeWithHook
+Cafe.CaffeinBevarage <|-- Cafe.Tea
+@enduml
